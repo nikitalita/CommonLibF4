@@ -42,6 +42,50 @@ set(SOURCES
 	include/RE/Bethesda/BSResource.h
 	include/RE/Bethesda/BSScaleformManager.h
 	include/RE/Bethesda/BSScript.h
+	include/RE/Bethesda/BSScript/Array.h
+	include/RE/Bethesda/BSScript/CompiledScriptLoader.h
+	include/RE/Bethesda/BSScript/ErrorLogger.h
+	include/RE/Bethesda/BSScript/ICachedErrorMessage.h
+	include/RE/Bethesda/BSScript/IClientVM.h
+	include/RE/Bethesda/BSScript/IComplexType.h
+	include/RE/Bethesda/BSScript/IFunction.h
+	include/RE/Bethesda/BSScript/ILoader.h
+	include/RE/Bethesda/BSScript/IMemoryPagePolicy.h
+	include/RE/Bethesda/BSScript/IObjectHandlePolicy.h
+	include/RE/Bethesda/BSScript/IObjectProcessor.h
+	include/RE/Bethesda/BSScript/IProfilePolicy.h
+	include/RE/Bethesda/BSScript/ISavePatcherInterface.h
+	include/RE/Bethesda/BSScript/IStackCallbackFunctor.h
+	include/RE/Bethesda/BSScript/IStackCallbackSaveInterface.h
+	include/RE/Bethesda/BSScript/IVMDebugInterface.h
+	include/RE/Bethesda/BSScript/IVMObjectBindInterface.h
+	include/RE/Bethesda/BSScript/IVMSaveLoadInterface.h
+	include/RE/Bethesda/BSScript/IVirtualMachine.h
+	include/RE/Bethesda/BSScript/Internal/CodeTasklet.h
+	include/RE/Bethesda/BSScript/Internal/FunctionMessage.h
+	include/RE/Bethesda/BSScript/Internal/IFuncCallQuery.h
+	include/RE/Bethesda/BSScript/Internal/RawFuncCallQuery.h
+	include/RE/Bethesda/BSScript/Internal/ReadableStringTable.h
+	include/RE/Bethesda/BSScript/Internal/ScriptFunction.h
+	include/RE/Bethesda/BSScript/Internal/SuspendedStack.h
+	include/RE/Bethesda/BSScript/Internal/VDescTable.h
+	include/RE/Bethesda/BSScript/LinkerProcessor.h
+	include/RE/Bethesda/BSScript/LogEvent.h
+	include/RE/Bethesda/BSScript/MergedBoundScript.h
+	include/RE/Bethesda/BSScript/NF_util/NativeFunctionBase.h
+	include/RE/Bethesda/BSScript/Object.h
+	include/RE/Bethesda/BSScript/ObjectBindPolicy.h
+	include/RE/Bethesda/BSScript/ObjectTypeInfo.h
+	include/RE/Bethesda/BSScript/PackedInstructionStream.h
+	include/RE/Bethesda/BSScript/PropertyGroupInfo.h
+	include/RE/Bethesda/BSScript/SimpleAllocMemoryPagePolicy.h
+	include/RE/Bethesda/BSScript/Stack.h
+	include/RE/Bethesda/BSScript/StackFrame.h
+	include/RE/Bethesda/BSScript/StatsEvent.h
+	include/RE/Bethesda/BSScript/Struct.h
+	include/RE/Bethesda/BSScript/StructTypeInfo.h
+	include/RE/Bethesda/BSScript/TypeInfo.h
+	include/RE/Bethesda/BSScript/Variable.h
 	include/RE/Bethesda/BSScriptUtil.h
 	include/RE/Bethesda/BSShader.h
 	include/RE/Bethesda/BSSoundHandle.h
@@ -125,35 +169,6 @@ set(SOURCES
 	include/RE/Bethesda/UserEvents.h
 	include/RE/Bethesda/Workshop.h
 	include/RE/Bethesda/bhkCharacterController.h
-	include/RE/Bethesda/BSScript/Array.h
-	include/RE/Bethesda/BSScript/CompiledScriptLoader.h
-	include/RE/Bethesda/BSScript/ErrorLogger.h
-	include/RE/Bethesda/BSScript/ICachedErrorMessage.h
-	include/RE/Bethesda/BSScript/IClientVM.h
-	include/RE/Bethesda/BSScript/IComplexType.h
-	include/RE/Bethesda/BSScript/IFunction.h
-	include/RE/Bethesda/BSScript/ILoader.h
-	include/RE/Bethesda/BSScript/IMemoryPagePolicy.h
-	include/RE/Bethesda/BSScript/IObjectHandlePolicy.h
-	include/RE/Bethesda/BSScript/IProfilePolicy.h
-	include/RE/Bethesda/BSScript/ISavePatcherInterface.h
-	include/RE/Bethesda/BSScript/IStackCallbackSaveInterface.h
-	include/RE/Bethesda/BSScript/IVirtualMachine.h
-	include/RE/Bethesda/BSScript/Internal/ReadableStringTable.h
-	include/RE/Bethesda/BSScript/Internal/VDescTable.h
-	include/RE/Bethesda/BSScript/MergedBoundScript.h
-	include/RE/Bethesda/BSScript/NF_util/NativeFunctionBase.h
-	include/RE/Bethesda/BSScript/Object.h
-	include/RE/Bethesda/BSScript/ObjectBindPolicy.h
-	include/RE/Bethesda/BSScript/ObjectTypeInfo.h
-	include/RE/Bethesda/BSScript/PropertyGroupInfo.h
-	include/RE/Bethesda/BSScript/SimpleAllocMemoryPagePolicy.h
-	include/RE/Bethesda/BSScript/Stack.h
-	include/RE/Bethesda/BSScript/StackFrame.h
-	include/RE/Bethesda/BSScript/Struct.h
-	include/RE/Bethesda/BSScript/StructTypeInfo.h
-	include/RE/Bethesda/BSScript/TypeInfo.h
-	include/RE/Bethesda/BSScript/Variable.h
 	include/RE/Fallout.h
 	include/RE/Havok/hkArray.h
 	include/RE/Havok/hkBaseObject.h
@@ -266,16 +281,17 @@ set(SOURCES
 	src/RE/Bethesda/BSExtraData.cpp
 	src/RE/Bethesda/BSScaleformManager.cpp
 	src/RE/Bethesda/BSScript.cpp
+	src/RE/Bethesda/BSScript/Object.cpp
+	src/RE/Bethesda/BSScript/PackedInstructionStream.cpp
+	src/RE/Bethesda/BSScript/Struct.cpp
+	src/RE/Bethesda/BSScript/TypeInfo.cpp
+	src/RE/Bethesda/BSScript/Variable.cpp
 	src/RE/Bethesda/Calendar.cpp
 	src/RE/Bethesda/FormComponents.cpp
 	src/RE/Bethesda/MenuCursor.cpp
 	src/RE/Bethesda/TESBoundAnimObjects.cpp
 	src/RE/Bethesda/TESForms.cpp
 	src/RE/Bethesda/TESObjectREFRs.cpp
-	src/RE/Bethesda/BSScript/Object.cpp
-	src/RE/Bethesda/BSScript/Struct.cpp
-	src/RE/Bethesda/BSScript/TypeInfo.cpp
-	src/RE/Bethesda/BSScript/Variable.cpp
 	src/RE/Fallout.cpp
 	src/RE/NetImmerse/NiAVObject.cpp
 	src/RE/NetImmerse/NiObjectNET.cpp
