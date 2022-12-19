@@ -61,6 +61,7 @@ set(SOURCES
 	include/RE/Bethesda/BSScript/IVMObjectBindInterface.h
 	include/RE/Bethesda/BSScript/IVMSaveLoadInterface.h
 	include/RE/Bethesda/BSScript/IVirtualMachine.h
+	include/RE/Bethesda/BSScript/Internal/AttachedScript.h
 	include/RE/Bethesda/BSScript/Internal/CodeTasklet.h
 	include/RE/Bethesda/BSScript/Internal/FunctionMessage.h
 	include/RE/Bethesda/BSScript/Internal/IFuncCallQuery.h
@@ -69,6 +70,7 @@ set(SOURCES
 	include/RE/Bethesda/BSScript/Internal/ScriptFunction.h
 	include/RE/Bethesda/BSScript/Internal/SuspendedStack.h
 	include/RE/Bethesda/BSScript/Internal/VDescTable.h
+	include/RE/Bethesda/BSScript/Internal/VirtualMachine.h
 	include/RE/Bethesda/BSScript/LinkerProcessor.h
 	include/RE/Bethesda/BSScript/LogEvent.h
 	include/RE/Bethesda/BSScript/MergedBoundScript.h
@@ -78,6 +80,7 @@ set(SOURCES
 	include/RE/Bethesda/BSScript/ObjectTypeInfo.h
 	include/RE/Bethesda/BSScript/PackedInstructionStream.h
 	include/RE/Bethesda/BSScript/PropertyGroupInfo.h
+	include/RE/Bethesda/BSScript/PropertyTypeInfo.h
 	include/RE/Bethesda/BSScript/SimpleAllocMemoryPagePolicy.h
 	include/RE/Bethesda/BSScript/Stack.h
 	include/RE/Bethesda/BSScript/StackFrame.h
@@ -106,6 +109,7 @@ set(SOURCES
 	include/RE/Bethesda/BSTObjectArena.h
 	include/RE/Bethesda/BSTOptional.h
 	include/RE/Bethesda/BSTPoint.h
+	include/RE/Bethesda/BSTPointerAndFlags.h
 	include/RE/Bethesda/BSTSingleton.h
 	include/RE/Bethesda/BSTSmallIndexScatterTable.h
 	include/RE/Bethesda/BSTSmartPointer.h
@@ -281,8 +285,12 @@ set(SOURCES
 	src/RE/Bethesda/BSExtraData.cpp
 	src/RE/Bethesda/BSScaleformManager.cpp
 	src/RE/Bethesda/BSScript.cpp
+	src/RE/Bethesda/BSScript/Array.cpp
+	src/RE/Bethesda/BSScript/Internal/VirtualMachine.cpp
 	src/RE/Bethesda/BSScript/Object.cpp
+	src/RE/Bethesda/BSScript/ObjectTypeInfo.cpp
 	src/RE/Bethesda/BSScript/PackedInstructionStream.cpp
+	src/RE/Bethesda/BSScript/StackFrame.cpp
 	src/RE/Bethesda/BSScript/Struct.cpp
 	src/RE/Bethesda/BSScript/TypeInfo.cpp
 	src/RE/Bethesda/BSScript/Variable.cpp
