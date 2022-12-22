@@ -37,9 +37,11 @@ set(SOURCES
 	include/RE/Bethesda/BSInputEventUser.h
 	include/RE/Bethesda/BSLock.h
 	include/RE/Bethesda/BSMTAManager.h
+	include/RE/Bethesda/BSMemStorage.h
 	include/RE/Bethesda/BSPointerHandle.h
 	include/RE/Bethesda/BSPreCulledObjects.h
 	include/RE/Bethesda/BSResource.h
+	include/RE/Bethesda/BSResourceNiBinaryStream.h
 	include/RE/Bethesda/BSScaleformManager.h
 	include/RE/Bethesda/BSScript.h
 	include/RE/Bethesda/BSScript/Array.h
@@ -49,6 +51,7 @@ set(SOURCES
 	include/RE/Bethesda/BSScript/IClientVM.h
 	include/RE/Bethesda/BSScript/IComplexType.h
 	include/RE/Bethesda/BSScript/IFunction.h
+	include/RE/Bethesda/BSScript/IHandleReaderWriter.h
 	include/RE/Bethesda/BSScript/ILoader.h
 	include/RE/Bethesda/BSScript/IMemoryPagePolicy.h
 	include/RE/Bethesda/BSScript/IObjectHandlePolicy.h
@@ -93,6 +96,7 @@ set(SOURCES
 	include/RE/Bethesda/BSShader.h
 	include/RE/Bethesda/BSSoundHandle.h
 	include/RE/Bethesda/BSSpring.h
+	include/RE/Bethesda/BSStorage.h
 	include/RE/Bethesda/BSStringPool.h
 	include/RE/Bethesda/BSStringT.h
 	include/RE/Bethesda/BSSystemFile.h
@@ -122,6 +126,7 @@ set(SOURCES
 	include/RE/Bethesda/Calendar.h
 	include/RE/Bethesda/Console.h
 	include/RE/Bethesda/ControlMap.h
+	include/RE/Bethesda/ErrorCodes.h
 	include/RE/Bethesda/Events.h
 	include/RE/Bethesda/FavoritesManager.h
 	include/RE/Bethesda/FormComponents.h
@@ -152,6 +157,8 @@ set(SOURCES
 	include/RE/Bethesda/SendHUDMessage.h
 	include/RE/Bethesda/Settings.h
 	include/RE/Bethesda/SplineUtils.h
+	include/RE/Bethesda/Stream.h
+	include/RE/Bethesda/StreamBase.h
 	include/RE/Bethesda/TESBoundAnimObjects.h
 	include/RE/Bethesda/TESBoundObjects.h
 	include/RE/Bethesda/TESCamera.h
@@ -208,6 +215,7 @@ set(SOURCES
 	include/RE/NetImmerse/NiFile.h
 	include/RE/NetImmerse/NiFlags.h
 	include/RE/NetImmerse/NiMatrix3.h
+	include/RE/NetImmerse/NiMemStream.h
 	include/RE/NetImmerse/NiNode.h
 	include/RE/NetImmerse/NiObject.h
 	include/RE/NetImmerse/NiObjectNET.h
@@ -283,6 +291,7 @@ set(SOURCES
 	src/RE/Bethesda/Actor.cpp
 	src/RE/Bethesda/BGSInventoryItem.cpp
 	src/RE/Bethesda/BSExtraData.cpp
+	src/RE/Bethesda/BSResourceNiBinaryStream.cpp
 	src/RE/Bethesda/BSScaleformManager.cpp
 	src/RE/Bethesda/BSScript.cpp
 	src/RE/Bethesda/BSScript/Array.cpp
@@ -292,16 +301,20 @@ set(SOURCES
 	src/RE/Bethesda/BSScript/PackedInstructionStream.cpp
 	src/RE/Bethesda/BSScript/StackFrame.cpp
 	src/RE/Bethesda/BSScript/Struct.cpp
+	src/RE/Bethesda/BSScript/StructTypeInfo.cpp
 	src/RE/Bethesda/BSScript/TypeInfo.cpp
 	src/RE/Bethesda/BSScript/Variable.cpp
 	src/RE/Bethesda/Calendar.cpp
 	src/RE/Bethesda/FormComponents.cpp
 	src/RE/Bethesda/MenuCursor.cpp
+	src/RE/Bethesda/Stream.cpp
+	src/RE/Bethesda/StreamBase.cpp
 	src/RE/Bethesda/TESBoundAnimObjects.cpp
 	src/RE/Bethesda/TESForms.cpp
 	src/RE/Bethesda/TESObjectREFRs.cpp
 	src/RE/Fallout.cpp
 	src/RE/NetImmerse/NiAVObject.cpp
+	src/RE/NetImmerse/NiBinaryStream.cpp
 	src/RE/NetImmerse/NiObjectNET.cpp
 	src/RE/NetImmerse/NiRect.cpp
 	src/RE/Scaleform/GFx/GFx_Player.cpp
